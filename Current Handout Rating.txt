@@ -1,0 +1,27 @@
+FITLORE RESCUE — CURRENT HANDOUT RATING
+Assessment date: October 25, 2026
+Overall judgment: 8/10 for the current build and evidence. This is an advisory assessment, not an official or predicted grader score. The handout has no numbered 15-item scoring rubric or point weights.
+Track: Bring your own use case, code track. Do not describe this as completed Project 3C: its project-management integration and week-over-week reporting requirements are different.
+
+Handout requirement | Assessment | Evidence or remaining limitation
+Agent chooses next actions (p1) | Exceeds baseline | Real model-selected bounded tool loop; not one-shot generation.
+Tool use and control flow (p1,8) | Exceeds baseline | Six allowlisted actions, required evidence and independent validation.
+State across steps/sessions (p1,8) | Exceeds baseline | SQLite and LangGraph checkpoints; saved approval and shoot revisions; browser reload verified.
+Failure handling (p1,10) | Exceeds baseline | Retry then handoff, provider failure handling, step cap, live failure cases.
+Human boundary before writes (p8) | Exceeds baseline | Approval/rejection/validated alternative; stale revision and duplicate-write protections.
+Useful task and reusable input (p1,7) | Meets; external value unproven | Editable briefs and CSV input. Fictional trials; no independent stylist validation.
+One-liner and success measurement (p7–8) | Mostly meets | Workflow outcomes measured on 10 live cases. Runtime excludes human review; manual baseline is an estimate. Full user end-to-end completion time remains unmeasured.
+Code track (p9) | Meets | LangGraph/checkpointers/interrupts, real Nebius model. Local traces rather than LangSmith; multiple agents are not universally required.
+Google Doc (p10) | Meets | Overview, data, prompt examples, iterations, learnings, diagram, limits and evidence; anyone-with-link reader access verified. Coding-process detail is concise and should be visibly supported in the video.
+GitHub code assets (p10) | Meets | Public repository with complete source ZIP and evaluation evidence. Browsable app/web source folders would improve reviewer convenience; they are not currently expanded on GitHub.
+Video <=5 minutes (p10) | Pending | Transcript prepared; actual recording and accessible video link still required.
+Originality (p11) | Supported | Focused extension of the user's prior FitLore concept; no supplied solution code copied. No claim of a global novelty audit.
+
+Why this is not 10/10: recording is missing; real-user impact and full human-inclusive completion time are unmeasured; the GitHub source is packaged in a ZIP; the official scoring criteria are not supplied. Strong control-flow evidence does not guarantee Builder of the Week.
+
+Suggested complete one-liner:
+FitLore Rescue helps stylists recover missing-garment shoot plans in a web workspace, replacing an estimated 10–15 minutes of manual impact and wardrobe checking, using six model-selectable actions to investigate and validate options, handing off before any plan update or when no safe option exists, with a target of at least 8 of 10 correct workflow outcomes within three minutes of system processing; the manual estimate and human-inclusive completion time remain to be validated.
+
+Observed evidence: 25 deterministic tests passed; 10/10 fictional live evaluation cases passed; median system processing 4.185 seconds, maximum 6.98 seconds. Automated approvals were simulated. These are not independent end-user trials.
+
+UPDATE: Success-measurement implementation now meets the end-to-end measurement requirement: start-to-operator confirmation, explicit usability feedback, inclusive denominator, separated handoffs/rejections and persisted export. Independent human pilot results remain pending; no achieved 8/10 rate is claimed. The original ten-case benchmark remains separate. Automated suite now has 32 passing tests.

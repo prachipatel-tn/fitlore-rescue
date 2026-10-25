@@ -9,16 +9,20 @@ The handout does not provide a numbered 15-point scoring rubric. “Exceeds” b
 5. Failure recovery — beyond baseline: one inventory retry, second-failure handoff, provider failure and ten-step limits; live and deterministic evidence.
 6. Human handoff — beyond baseline: approve, reject, validated alternative and note; stale and invalid approvals blocked. Physical fit stays human.
 7. Reusable input — beyond baseline: editable briefs, CSV validation, look references, custom garment categories, revision checks.
-8. Evaluation — beyond baseline: 25 deterministic tests and 10/10 fictional live cases; no premature writes, correct outcome and <180-second processing target. Full traces in live-evaluation.json. Human review time excluded; no independent user study.
+8. Evaluation — beyond baseline: 32 deterministic tests and 10/10 fictional live cases; no premature writes, correct outcome and <180-second processing target. Full traces in live-evaluation.json. Human review time excluded; no independent user study.
 9. Coding framework — met with additional controls: LangGraph, SQLite, FastAPI and real Nebius Qwen calls. Multi-agent architecture is not a universal handout requirement.
 10. Data and scope — documented: fixture provenance, user-supplied records, photo credits, boundaries and local retention.
 11. Prompts and iterations — strengthened: actual user directions, full runtime prompt in source, implementation iterations, tests and observed model mistakes.
 12. Documentation — updated native Google Doc and four-page DOCX; architecture, data, results, learnings and limitations.
-13. GitHub — sanitized source package and evidence prepared; repository access and browsable file delivery need verification before submission.
+13. GitHub — sanitized source package and evidence prepared; public access verified; complete source is provided in the ZIP.
 14. Video — intentionally deferred by user. Must be <=5 minutes, natural screen recording and own voice, actual live run, coding-tool usage and final result. A generated avatar video is not being produced.
-15. Submission readiness — pending recording and reviewer access verification. No honest “everything exceeded” claim until these are complete.
+15. Submission readiness — pending recording. No honest “everything exceeded” claim until these are complete.
 
 Optional nine-field framework
 Trigger: garment unavailable. User: stylist. Surface: local production desk. Context: shoot brief, inventory, looks, review tasks. Tools: six allowlisted actions. Memory: SQLite/checkpoints. Controls: evidence, constraints, explicit approval, revisions, idempotency, budget. Handoff: invalid options/repeated failure/provider failure/step limit. Success: correct completion/rejection/handoff, no unauthorized writes, system processing <180 seconds.
 
 Recording stays last. Nine provider requests remain as of this evaluation.
+
+Measurement update: new live UI starts use start-to-operator-confirmation timing, including human review; explicit usable-plan assessment; handoffs and rejections separate; all starts remain in denominator. No human pilot rate claimed yet.
+
+Measurement update: new live UI starts use start-to-operator-confirmation timing, including human review; explicit usable-plan assessment; handoffs and rejections separate; all starts remain in denominator. No human pilot rate claimed yet.

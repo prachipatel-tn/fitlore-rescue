@@ -1,0 +1,72 @@
+FITLORE RESCUE — RECORDING TRANSCRIPT
+Target: 4 minutes 40 seconds. Hard maximum: 5 minutes.
+Use your own voice. Read these as talking points, not a polished advertisement.
+
+BEFORE RECORDING (not narrated)
+1. Open http://127.0.0.1:8033 in a wide browser window. Keep text readable.
+2. Open the Google Doc report, public GitHub repository and this Codex conversation in separate tabs.
+3. In the app select Shoot workspace > Fictional demonstration, Scenario > Missing hero jacket, Run mode > Live AI agent. Do not click Investigate yet.
+4. Practice without paid calls: use Rehearsal mode, then switch back to Live AI before recording. The rehearsal label must never be presented as a live model result.
+5. Locate saved investigations “Evaluate retry” and “Evaluate no_match” beforehand so you can find them quickly. Return to the fictional demonstration and Live AI mode.
+6. Have app/agent.py and tests/test_workspace.py available in your editor. Show source and tests, never .env or credentials.
+7. Record screen and microphone. An optional small webcam view is fine. Avoid generated voice, avatar, background music and elaborate transitions.
+8. Nine model requests remain within the authorized cap. The standard evaluation used five calls; real runs can differ. Record one fresh live run. Do not retry repeatedly if it fails.
+9. Pause notifications and check microphone audio. Start a timer. The timings below are pacing targets, not instructions to pretend a slow run finished.
+
+00:00–00:25 | PROBLEM AND SCOPE
+SCREEN: App brief and blocked looks. Point at G01 and the two affected looks.
+SAY:
+“This is FitLore Rescue. I’m building it for a stylist whose shoot is almost ready when an important garment becomes unavailable. Here, the same navy jacket is used in two looks. The replacement needs to match the brief, arrive before the ten o’clock call, and stay within sixty dollars. This is a custom use case, demonstrated with fictional wardrobe data.”
+
+00:25–00:45 | REUSABLE INPUT
+ACTION: Click Create or edit a shoot. Briefly show the brief fields, wardrobe CSV and look references. Collapse Brief, wardrobe and affected looks WITHOUT saving changes.
+SAY:
+“The shoot can be edited, and wardrobe records can be imported from CSV. So the workflow isn’t limited to this example. For this recording, I’m keeping the prepared brief so we can follow the result clearly.”
+
+00:45–01:25 | ONE FRESH LIVE INVESTIGATION
+ACTION: Confirm Live AI agent. Click Investigate & build a plan ONCE. Show the timeline. Open one Inspect evidence entry, preferably the replacement check.
+SAY:
+“I’m starting a fresh live investigation. The Qwen model, running through Nebius, chooses the next tool. It reads the brief, traces the affected looks, searches the wardrobe, and asks the application to check a candidate. The timeline records the tool results. The model makes the recommendation, while code checks availability, size, color, sleeves, timing and cost.”
+IF STILL RUNNING: Say “It’s still investigating; I’m waiting for the actual result.” Do not narrate an outcome before it appears.
+
+01:25–02:05 | APPROVAL AND MEMORY
+ACTION: Wait for AWAITING APPROVAL. Point at the actual name, cost and evidence IDs. Refresh the page. Show that the proposal remains. Add review note: “Approved for the plan; stylist fit check still required.” Click Approve plan update ONCE.
+SAY:
+“The proposal is ready, but the shoot hasn’t changed yet. I can approve it, reject it, or select another candidate that passes the checks. I’ll refresh the page: the review is still here because its state was saved. I’m approving this replacement for the plan. Physical fit and the photographer’s review remain human decisions.”
+IF NO PROPOSAL: Do not say this paragraph. Explain the displayed handoff honestly, then use a saved approved run only as a clearly labeled example.
+
+02:05–02:25 | FINAL RESULT
+ACTION: Wait for COMPLETE. Show replacement ID in both looks, cost and remaining fit-review status. Point at Download this investigation record. Then scroll to Does the workflow finish the job?, confirm whether the revised plan is usable, add a short factual note and click Record outcome assessment. Leave manual time blank unless actually measured.
+SAY:
+“Both looks now reference the approved replacement. I’m checking the result and recording whether the revised plan is usable. This measures the full time from starting the investigation through my review, not just model speed. Fit reviews stay open, and I can download the record.”
+Only mention the displayed price and garment name if they match this run. G02 at $45 is expected, not guaranteed.
+
+02:25–03:05 | FAILURE RECOVERY AND HANDOFF
+ACTION: Saved investigations > Evaluate retry. Show the failed inventory read and subsequent successful read. Then open Evaluate no_match and show HANDOFF.
+SAY:
+“These are saved traces from earlier live-model evaluations, not new runs. In this first case, we deliberately caused an inventory timeout. The agent retried and continued. In the second case, no replacement met the constraints, so it handed control back without changing the plan. Repeated inventory failure also stops the workflow rather than retrying forever.”
+Do not present automated evaluation approval notes as approvals from a real stylist.
+
+03:05–03:45 | HOW AI CODING TOOLS WERE USED
+ACTION: Switch to this Codex conversation and show the request to build on FitLore. Show app/agent.py approval and commit functions, then the test file or existing test result. Briefly show the report’s architecture diagram.
+SAY:
+“I used Codex to inspect my earlier FitLore project and build this focused recovery workflow. I then asked it to strengthen the weak areas, which led to editable shoots, validated alternatives, and more tests. LangGraph manages the workflow and approval pause. SQLite stores the state. The important control is that the model cannot directly apply its own recommendation.”
+
+03:45–04:15 | EVALUATION AND LIMITS
+ACTION: Show Evaluation Results.csv on GitHub, then the report’s Evidence and limitations section.
+SAY:
+“Thirty-two automated tests passed. Ten fictional live evaluation cases also reached their expected outcomes, including rejection, no match, changed constraints and stale approval. Median system processing was about four point two seconds. That excludes human review time, and evaluation approvals were simulated. These are small controlled tests, not proof of production reliability or measured time savings for stylists.”
+
+04:15–04:40 | LEARNING AND CLOSE
+ACTION: Show the public repository and Google Doc, then return to the completed live run if time allows.
+SAY:
+“My main learning was that a valid JSON response can still contain a bad decision. The agent can investigate, but the application needs to control what it can change. FitLore now demonstrates the full recovery workflow, with evidence and human approval. My next step is testing it with a stylist and connecting a real inventory source. The code and project report are linked in my submission.”
+
+IF SOMETHING FAILS
+- State what is actually displayed. A safe handoff is a legitimate result; do not conceal it with a rehearsal result.
+- A saved successful trace can explain behavior, but label it saved. The recording must still show an actual live application attempt and its true result.
+- If the model request allowance is exhausted, do not change the cap or claim a replay is live. Ask for additional authorization before another paid run.
+- If nearing five minutes, shorten input editing and the closing paragraph. Keep live result, human approval/handoff, failure evidence and AI coding-tool usage.
+
+AFTER RECORDING
+Trim only dead time at the beginning/end. Keep the investigation and approval sequence honest and continuous. Verify total length <=5 minutes, audible voice, readable text and reviewer access to the video link. Submit the video link, Google Doc and GitHub repository using the handout’s submission form.

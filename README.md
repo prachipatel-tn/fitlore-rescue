@@ -1,6 +1,6 @@
 # FitLore Rescue submission
 
-Download and extract `FitLore-Rescue-Source.zip`, then follow setup below. The archive includes the complete runnable directory structure, 25 tests, dependency lockfile and live evaluation harness. Credentials and runtime databases are excluded.
+Download and extract `FitLore-Rescue-Source.zip`, then follow setup below. Includes 32 tests and the end-to-end measurement workflow.
 
 # FitLore Rescue
 
@@ -54,7 +54,7 @@ The model outputs a schema-constrained action. Python dispatches only allowliste
 
 Automated tests use an explicitly deterministic decision driver. They validate control flow and integrity; they are not live model quality evaluations. Live evidence is exported separately in `output/submission/live-evidence.json`.
 
-Two exploratory Nebius runs were inspected: transient inventory failure recovered to an approved plan; no qualifying garment led to handoff with no write. The model made unnecessary reads and initially selected invalid candidates in the no-match case. Constraint checks rejected them. A subsequent ten-case live evaluation passed 10/10 defined acceptance criteria in under seven seconds per case, excluding human review time. It covers standard recovery, retries, outage, no match, reject, custom white shirt, low budget, untrusted brief instructions, stale approval and size mismatch. See `output/submission/live-evaluation.json`. The approvals in this evaluation were simulated by the test harness. 25 deterministic tests also pass. This small fictional sample is not a general success-rate claim.
+Two exploratory Nebius runs were inspected: transient inventory failure recovered to an approved plan; no qualifying garment led to handoff with no write. The model made unnecessary reads and initially selected invalid candidates in the no-match case. Constraint checks rejected them. A subsequent ten-case live evaluation passed 10/10 defined acceptance criteria in under seven seconds per case, excluding human review time. It covers standard recovery, retries, outage, no match, reject, custom white shirt, low budget, untrusted brief instructions, stale approval and size mismatch. See `output/submission/live-evaluation.json`. The approvals in this evaluation were simulated by the test harness. 32 deterministic tests also pass. This small fictional sample is not a general success-rate claim.
 
 ## Scope
 
@@ -81,3 +81,9 @@ Report: https://docs.google.com/document/d/1unQyGjH-shQhOp4D55r3fNvyWaWiowYcRQ2m
 Choose Create or edit a shoot, edit the brief and constraints, paste/upload wardrobe CSV, and define looks using garment IDs. Save locally, then start a standard investigation. Live mode sends the selected records to Nebius. Fault injection is restricted to the fictional demo. At review, select the proposal or another validated candidate, add a note and approve or reject. Editing the shoot while approval is pending blocks the stale transaction.
 
 Runtime data stays in `data/runtime` until the operator removes it. Do not commit it. Tests isolate their databases in temporary directories. The live evaluation uses the shared ledger and stops at 74 requests to preserve six of this session’s authorized 80. Run it only with a suitable explicit provider budget.
+
+## User-inclusive success measurement
+
+New UI runs record system processing, approval wait, terminal elapsed time, and start-to-operator-confirmation time. After inspecting the final result, the operator records whether the revised plan is usable, with a required explanation. The primary target is at least 8 of 10 live starts producing an operator-confirmed usable recovery within 180 seconds, including human review. Every instrumented live start stays in the denominator, including pending/unreviewed runs. Safe handoffs and rejections are reported separately, not counted as completed recoveries. Rehearsals and legacy automated evaluations are excluded.
+
+No user-study success rate has been established yet. The ten existing model evaluations remain a separate controlled benchmark. Manual baseline timing is optional, operator-reported, and must use the same task boundary; the application makes no automatic savings claim. Outcome timestamps and assessments persist and are included in the run export.

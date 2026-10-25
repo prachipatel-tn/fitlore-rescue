@@ -29,7 +29,7 @@ Open the No suitable replacement run.
 Clearly call these saved traces. Do not present them as new live executions.
 
 3:10–3:50 — HOW IT WAS BUILT
-“I used Codex to inspect my previous FitLore project, build this focused workflow, and write tests. LangGraph manages the agent state and approval interrupt. SQLite saves the investigation and plan. Nebius runs the Qwen model. Twenty-five automated tests passed, and ten fictional live evaluation cases met their defined acceptance criteria. Human approvals in that evaluation were simulated.”
+“I used Codex to inspect my previous FitLore project, build this focused workflow, and write tests. LangGraph manages the agent state and approval interrupt. SQLite saves the investigation and plan. Nebius runs the Qwen model. Thirty-two automated tests passed, and ten fictional live evaluation cases met their defined acceptance criteria. Human approvals in that evaluation were simulated.”
 Show this Codex conversation and one actual code/test change for 15 seconds, then the architecture. The handout asks to show how AI coding tools were used, not just name them.
 
 3:50–4:10 — WHAT YOU LEARNED
