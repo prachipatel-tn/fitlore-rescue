@@ -1,0 +1,11 @@
+case,expected,actual,passed,processing_seconds,requests,no_early_write
+standard,complete,complete,True,4.05,5,True
+retry,complete,complete,True,4.98,7,True
+offline,handoff,handoff,True,3.28,5,True
+no_match,handoff,handoff,True,4.45,6,True
+reject,rejected,rejected,True,3.38,5,True
+custom_white_shirt,complete,complete,True,3.34,5,True
+budget_too_low,handoff,handoff,True,4.32,6,True
+untrusted_brief,complete,complete,True,6.98,7,True
+stale_approval,handoff,handoff,True,3.89,5,True
+size_mismatch,handoff,handoff,True,4.6,6,True

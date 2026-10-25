@@ -1,18 +1,10 @@
 # FitLore Rescue submission
 
-This repository contains the runnable source archive, project report, and recording guide.
-
-1. Download `FitLore-Rescue-Source.zip` and extract it into a new folder.
-2. Open the extracted folder in a terminal and follow the setup instructions below.
-3. The archive includes the Python app, browser interface, tests, licensed images, and live evaluation evidence. No credentials or runtime databases are included.
-
-[Native Google Doc report](https://docs.google.com/document/d/1unQyGjH-shQhOp4D55r3fNvyWaWiowYcRQ2m696kLkY/edit)
-
-The report and recording guide are also available at the repository root. The demonstration video is still to be recorded.
+Download and extract `FitLore-Rescue-Source.zip`, then follow setup below. The archive includes the complete runnable directory structure, 25 tests, dependency lockfile and live evaluation harness. Credentials and runtime databases are excluded.
 
 # FitLore Rescue
 
-A local shoot-recovery agent that investigates an unavailable hero jacket, checks replacement garments, and pauses for human approval before updating affected looks.
+A local shoot-recovery agent that investigates an unavailable garment, checks replacement garments, and pauses for human approval before updating affected looks.
 
 Built on FitLore's fashion-production concept and visual identity. Week 3 adds a new model-selected tool loop, durable LangGraph checkpoints, bounded recovery, and an idempotent approval transaction. This is a focused companion prototype, not a migration of the Week 2 database.
 
@@ -28,7 +20,7 @@ cp .env.example .env
 FITLORE_ALLOW_MODEL=true .venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8033
 ```
 
-Open http://127.0.0.1:8033. Select **Rehearsal · no AI** for deterministic offline testing. Live mode requires Nebius and uses a durable 20-attempt ceiling per runtime directory. Attempts count even when requests fail; they do not represent dollars. The application does not automatically reset this allowance.
+Open http://127.0.0.1:8033. Select **Rehearsal · no AI** for deterministic offline testing. Live mode requires Nebius and uses a durable request ceiling per runtime directory (default 20; this session explicitly authorized 80 using `FITLORE_REQUEST_LIMIT=80`). Attempts count even when requests fail; they do not represent dollars. The application does not automatically reset this allowance.
 
 Alternatively, set `FITLORE_CREDENTIALS_FILE` to an existing dotenv file; only NEBIUS_API_KEY, NEBIUS_MODEL and NEBIUS_BASE_URL are read from it. Credentials remain server-side.
 
@@ -62,11 +54,11 @@ The model outputs a schema-constrained action. Python dispatches only allowliste
 
 Automated tests use an explicitly deterministic decision driver. They validate control flow and integrity; they are not live model quality evaluations. Live evidence is exported separately in `output/submission/live-evidence.json`.
 
-Two real Nebius runs were inspected: transient inventory failure recovered to an approved plan; no qualifying garment led to handoff with no write. The model made unnecessary reads and initially selected invalid candidates in the no-match case. Constraint checks rejected them. This small sample is not a general success-rate claim.
+Two exploratory Nebius runs were inspected: transient inventory failure recovered to an approved plan; no qualifying garment led to handoff with no write. The model made unnecessary reads and initially selected invalid candidates in the no-match case. Constraint checks rejected them. A subsequent ten-case live evaluation passed 10/10 defined acceptance criteria in under seven seconds per case, excluding human review time. It covers standard recovery, retries, outage, no match, reject, custom white shirt, low budget, untrusted brief instructions, stale approval and size mismatch. See `output/submission/live-evaluation.json`. The approvals in this evaluation were simulated by the test harness. 25 deterministic tests also pass. This small fictional sample is not a general success-rate claim.
 
 ## Scope
 
-- Fictional local inventory, eight garments, two looks, two downstream review tasks. Each new investigation gets an independent scenario copy.
+- Editable saved shoots with validated CSV inventory and look references. Approval updates the saved shoot atomically; concurrent edits invalidate stale proposals. The separate fictional demo has eight garments and two looks.
 - Single operator on localhost; no multi-user authentication or remote deployment.
 - No retailer search, real stock verification, bookings, payments, messages, vision analysis or physical fit guarantee.
 - Approval changes look assignments only. Stylist fit and photographer approval remain open.
@@ -82,4 +74,10 @@ Two real Nebius runs were inspected: transient inventory failure recovered to an
 
 ## Submission
 
-The local report and recording guide are in `output/submission/`. Import the report into Google Docs and verify reviewer access. The final video must show a live application run and stay under five minutes. Publish the sanitized source package to the intended GitHub repository; no credentials or runtime databases belong in that repository.
+Report: https://docs.google.com/document/d/1unQyGjH-shQhOp4D55r3fNvyWaWiowYcRQ2m696kLkY/edit . Local report, evidence, handout comparison and recording guide are in `output/submission/`. Reviewer access must be verified before submission. The final video must show a live application run and stay under five minutes. Publish the sanitized source package to the intended GitHub repository; no credentials or runtime databases belong in that repository.
+
+## Editable workflow
+
+Choose Create or edit a shoot, edit the brief and constraints, paste/upload wardrobe CSV, and define looks using garment IDs. Save locally, then start a standard investigation. Live mode sends the selected records to Nebius. Fault injection is restricted to the fictional demo. At review, select the proposal or another validated candidate, add a note and approve or reject. Editing the shoot while approval is pending blocks the stale transaction.
+
+Runtime data stays in `data/runtime` until the operator removes it. Do not commit it. Tests isolate their databases in temporary directories. The live evaluation uses the shared ledger and stops at 74 requests to preserve six of this session’s authorized 80. Run it only with a suitable explicit provider budget.

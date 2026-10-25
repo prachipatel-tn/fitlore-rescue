@@ -3,7 +3,7 @@ FITLORE RESCUE — FOUR-MINUTE LIVE DEMO
 Use your own voice while operating the app. These are talking points, not a script to memorize.
 
 Before recording
-Open http://127.0.0.1:8033 in a full-width browser. Choose Missing hero jacket and Live AI agent. There are 6 requests remaining in the authorized allowance; a standard run typically needs at least 5. Do not spend those on another rehearsal. Rehearsal mode uses no AI and is clearly labeled.
+Open http://127.0.0.1:8033 in a full-width browser. Select Fictional demonstration, Missing hero jacket and Live AI agent. There are 9 requests remaining in the authorized allowance; a standard run typically needs at least 5. Do not spend those on another rehearsal. Rehearsal mode uses no AI and is clearly labeled.
 Record your screen and microphone with your usual screen recorder. Do one practice narration in Rehearsal mode first. Keep the final video under five minutes.
 
 0:00–0:30 — THE PROBLEM
@@ -29,11 +29,11 @@ Open the No suitable replacement run.
 Clearly call these saved traces. Do not present them as new live executions.
 
 3:10–3:50 — HOW IT WAS BUILT
-“I used Codex to inspect my previous FitLore project, build this focused workflow, and write tests. LangGraph manages the agent state and approval interrupt. SQLite saves the investigation and plan. Nebius runs the Qwen model. Seventeen automated checks passed, and we inspected two live runs before this recording.”
-Show the architecture from the report if time permits.
+“I used Codex to inspect my previous FitLore project, build this focused workflow, and write tests. LangGraph manages the agent state and approval interrupt. SQLite saves the investigation and plan. Nebius runs the Qwen model. Twenty-five automated tests passed, and ten fictional live evaluation cases met their defined acceptance criteria. Human approvals in that evaluation were simulated.”
+Show this Codex conversation and one actual code/test change for 15 seconds, then the architecture. The handout asks to show how AI coding tools were used, not just name them.
 
 3:50–4:10 — WHAT YOU LEARNED
-“The biggest lesson was that a structured answer can still be wrong. The model should investigate, but the application must check what it is allowed to change. My next step would be a real inventory connection and broader testing.”
+“The biggest lesson was that a structured answer can still be wrong. The model should investigate, but the application must check what it is allowed to change. My next step would be a real inventory connection and independent stylist testing.”
 
 If a live call fails during recording
 Explain the failure shown on screen. Do not disguise it with rehearsal or pretend a saved result is live. You can demonstrate the persistent saved runs, but the submission still needs an honest live application demonstration.
