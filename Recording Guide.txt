@@ -1,0 +1,42 @@
+FITLORE RESCUE — FOUR-MINUTE LIVE DEMO
+
+Use your own voice while operating the app. These are talking points, not a script to memorize.
+
+Before recording
+Open http://127.0.0.1:8033 in a full-width browser. Choose Missing hero jacket and Live AI agent. There are 6 requests remaining in the authorized allowance; a standard run typically needs at least 5. Do not spend those on another rehearsal. Rehearsal mode uses no AI and is clearly labeled.
+Record your screen and microphone with your usual screen recorder. Do one practice narration in Rehearsal mode first. Keep the final video under five minutes.
+
+0:00–0:30 — THE PROBLEM
+“I built FitLore Rescue for the moment when a fashion shoot is almost ready and one essential garment becomes unavailable. Here, this jacket is used in two looks. We need a replacement that respects the brief, the deadline, and the budget.”
+Show the brief and blocked looks. Mention that the inventory is fictional demo data.
+
+0:30–1:30 — A REAL RUN
+Click Investigate & build a plan once in Live AI mode.
+“Behind this interface, a model chooses which tool to call next. It reads the brief, checks which looks are affected, searches the wardrobe, and asks code to validate a replacement.”
+Show the timeline as the actual results arrive. Point to one evidence record. Do not claim the model is perfect or that inventory is live retailer stock.
+
+1:30–2:20 — HUMAN CONTROL AND MEMORY
+When the proposal arrives, show its cost and source IDs.
+“The agent has proposed a replacement, but it hasn’t updated my shoot. I can reject it or approve it. The review is saved, so I can reload and come back.”
+Reload. Show the proposal still present. Approve once. Point to G02 in both looks and the remaining fit review.
+“Physical fit and the photographer’s approval are still human decisions.”
+
+2:20–3:10 — RECOVERY AND SAFE HANDOFF
+Open Saved investigations. Open the completed Inventory fails once run.
+“This is a saved trace from our earlier live test. We deliberately caused an inventory timeout. The agent recovered and reached approval.”
+Open the No suitable replacement run.
+“In this second live test, the model tried a jacket that arrived too late. The code rejected it. Eventually the agent handed control back instead of applying an invalid replacement.”
+Clearly call these saved traces. Do not present them as new live executions.
+
+3:10–3:50 — HOW IT WAS BUILT
+“I used Codex to inspect my previous FitLore project, build this focused workflow, and write tests. LangGraph manages the agent state and approval interrupt. SQLite saves the investigation and plan. Nebius runs the Qwen model. Seventeen automated checks passed, and we inspected two live runs before this recording.”
+Show the architecture from the report if time permits.
+
+3:50–4:10 — WHAT YOU LEARNED
+“The biggest lesson was that a structured answer can still be wrong. The model should investigate, but the application must check what it is allowed to change. My next step would be a real inventory connection and broader testing.”
+
+If a live call fails during recording
+Explain the failure shown on screen. Do not disguise it with rehearsal or pretend a saved result is live. You can demonstrate the persistent saved runs, but the submission still needs an honest live application demonstration.
+
+Finish
+Trim the beginning and ending. Check that your voice is audible, the actual clicks are visible, the video is under five minutes, and the shared video link opens for the reviewer. Keep pauses and natural phrasing; an ordinary walkthrough is the intended style.
